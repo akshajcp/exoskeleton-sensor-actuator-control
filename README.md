@@ -26,7 +26,7 @@
 | 💻 ESP32 Firmware | [`sketch.ino`](sketch.ino) |
 | 🧪 Wokwi Configuration | [`diagram.json`](diagram.json) |
 | 🖥️ Simulation Evidence | [`figures/`](figures/) |
-| 🌐 Wokwi | [Open Wokwi](https://wokwi.com/) |
+| 🌐 Wokwi | [Open Wokwi](https://wokwi.com/projects/474598962103266305) |
 
 ---
 
