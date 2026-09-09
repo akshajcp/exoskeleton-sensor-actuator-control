@@ -1,8 +1,3 @@
-Yes. Based on GitHub's current README guidance—especially keeping the README as the repository's entry point, explaining what it does, current status, getting started, and linking to deeper documentation—I would use the following as the **final README for your exoskeleton submission**. ([GitHub Docs][1])
-
-I have kept the technical claims aligned with your verified firmware and simulation, and deliberately separated **verified/simulated** items from **design-level/proposed** hardware.
-
-````markdown
 # Exoskeleton Sensor & Actuator Control System
 
 > **Embedded control prototype for a single lower-limb exoskeleton joint, implementing joint-position sensing, angle conversion, zone-based control, actuator commands, and latched safety faults.**
