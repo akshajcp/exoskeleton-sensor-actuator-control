@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "author": "David Forrest",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "chip-scope",
+      "id": "scope1",
+      "top": 20.22,
+      "left": 244.8,
+      "attrs": {
+        "sampleTimeUs": "20",
+        "sampleTimeMs": "0",
+        "triggerChannel": "0",
+        "triggerMode": "1",
+        "crtColor": "0",
+        "trace0Color": "14",
+        "trace1Color": "12",
+        "trace2Color": "10",
+        "trace3Color": "2",
+        "docUrl": "https://github.com/Dlloydev/Wokwi-Chip-Scope"
+      }
+    },
+    {
+      "type": "chip-pwm",
+      "id": "pwm1",
+      "top": -66.18,
+      "left": -22.19,
+      "attrs": {
+        "coefficientHz": "0.05",
+        "exponentHz": "1",
+        "duty": "20",
+        "docUrl": "https://github.com/Dlloydev/Wokwi-Chip-PWM"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -90,
+      "left": 138.2,
+      "attrs": { "color": "red", "label": "CCW" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -14.4,
+      "left": 133.85,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -90,
+      "left": 167,
+      "attrs": { "color": "red", "label": "CW" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -14.4,
+      "left": 162.65,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -90,
+      "left": 205.4,
+      "attrs": { "color": "GREEN", "label": "PWM" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -14.4,
+      "left": 201.05,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": 29.8,
+      "left": -154.9,
+      "rotate": 270,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:23", "scope1:D1", "green", [ "h0" ] ],
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "esp:GND.2", "led1:C", "black", [ "v0" ] ],
+    [ "esp:22", "scope1:D2", "green", [ "h0" ] ],
+    [ "r2:1", "led2:A", "green", [ "h0" ] ],
+    [ "esp:GND.2", "led2:C", "black", [ "v-76.8", "h33.64" ] ],
+    [ "r1:2", "esp:23", "green", [ "h-19.2", "v18" ] ],
+    [ "r2:2", "esp:22", "green", [ "h-19.2", "v27.6", "h-9.6" ] ],
+    [ "r3:1", "led3:A", "green", [ "h0", "v-19.2" ] ],
+    [ "led2:C", "led3:C", "green", [ "v0" ] ],
+    [ "r3:2", "scope1:D0", "green", [ "h0", "v8.4" ] ],
+    [ "esp:21", "scope1:D0", "green", [ "h110.44", "v-48" ] ],
+    [ "esp:RX", "scope1:D3", "green", [ "h120.04", "v-9.6" ] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "h67.2", "v-28" ] ],
+    [ "pot1:GND", "esp:GND.1", "black", [ "h48", "v67.2" ] ],
+    [ "pot1:SIG", "esp:34", "green", [ "h0" ] ]
+  ],
+  "dependencies": {
+    "chip-scope": "github:Dlloydev/Wokwi-Chip-scope@1.0.7",
+    "chip-pwm": "github:Dlloydev/Wokwi-Chip-PWM@1.0.6"
+  }
+}
